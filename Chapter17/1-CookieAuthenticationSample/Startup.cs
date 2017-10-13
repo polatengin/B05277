@@ -11,19 +11,24 @@ namespace CookieAuthenticationSample
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication("CookieAuthenticationScheme")
-                    .AddCookie(options => {
+                    .AddCookie("CookieAuthenticationScheme", options => {
                         options.LoginPath = "/Home/Login";
+                        /*
+                        Return Http 401, instead of redirection
+
+                        options.Events.OnRedirectToLogin = (context) => {
+                            context.Response.StatusCode = 401;
+                			return Task.CompletedTask;
+                        };
+                        */
                     });
 
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
