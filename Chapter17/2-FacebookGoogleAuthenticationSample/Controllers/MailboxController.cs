@@ -4,8 +4,5 @@ using Microsoft.AspNetCore.Mvc;
 [Authorize]
 public class MailboxController : Controller
 {
-    public IActionResult Index()
-    {
-        return View();
-    }
+    public IActionResult Index() => View();
 }

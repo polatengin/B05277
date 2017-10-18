@@ -6,15 +6,9 @@ public class HomeController : Controller
 {
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public HomeController(SignInManager<ApplicationUser> signInManager)
-    {
-        this._signInManager = signInManager;
-    }
+    public HomeController(SignInManager<ApplicationUser> signInManager) => this._signInManager = signInManager;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+    public IActionResult Index() => View();
 
     public IActionResult Facebook()
     {

@@ -6,13 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 public class HomeController : Controller
 {
-	[HttpGet]
-	public IActionResult Login()
-	{
-		return View();
-	}
+    [HttpGet]
+    public IActionResult Login() => View();
 
-	[HttpPost]
+    [HttpPost]
 	public async Task<IActionResult> Login(LoginModel model)
 	{
 		if(LoginUser(model.Email, model.Password))
