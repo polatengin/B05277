@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 public class HomeController : Controller
 {
+	public IActionResult Index() => View();
+
     [HttpGet]
     public IActionResult Login() => View();
 
@@ -25,7 +27,7 @@ public class HomeController : Controller
 			await HttpContext.SignInAsync("CookieAuthenticationScheme", principal);
 
 			//Redirect user to home page after login.
-			return Redirect("/");
+	        return RedirectToAction(nameof(Index));
 		}
 
 		return View();

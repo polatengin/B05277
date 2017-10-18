@@ -34,7 +34,7 @@ public class HomeController : Controller
         //info.ProviderKey
         //Facebook Unique Identifier for logged in user
 
-        return Redirect("/");
+        return RedirectToAction(nameof(Index));
     }
 
     public async Task<IActionResult> GoogleOK()
@@ -47,6 +47,6 @@ public class HomeController : Controller
         //info.ProviderKey
         //Google Unique Identifier for logged in user
 
-        return Redirect("/");
+        return RedirectToAction(nameof(Index));
     }
 }
