@@ -1,6 +1,8 @@
 *.suo
 *.user
+package-lock.json
 bin
 obj
 .vscode
 packages
+Properties
