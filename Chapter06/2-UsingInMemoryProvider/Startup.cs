@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace UsingTheLifecyclesAvailableInAsp.NetCore
+namespace UsingInMemoryProvider
 {
     public class Startup
     {
@@ -15,10 +15,6 @@ namespace UsingTheLifecyclesAvailableInAsp.NetCore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IOperationTransient, Operation>();
-            services.AddScoped<IOperationScoped, Operation>();
-            services.AddSingleton<IOperationSingleton, Operation>();
-            //services.AddInstance<IOperationTransient>(new Operation(new Guid()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
