@@ -1,3 +1,6 @@
+using System;
+using DryIoc;
+
 public static class IocDiExtensions
 {
     public static IServiceProvider ConfigureDI(this IServiceProvider services, Action<Registrator> configureServices)

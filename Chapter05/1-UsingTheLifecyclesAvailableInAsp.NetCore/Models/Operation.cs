@@ -1,6 +1,8 @@
+using System;
+
 public interface IOperation
 {
-    public Guid OperationId { get; }
+    Guid OperationId { get; }
 }
 
 public interface IOperationTransient : IOperation
