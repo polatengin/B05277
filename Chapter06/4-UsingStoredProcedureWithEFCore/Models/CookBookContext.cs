@@ -12,6 +12,11 @@ public class CookBookContext : DbContext
         return Set<Book>().FromSql("dbo.GetBooks");
     }
 
+    public virtual void InsertBook(string name)
+    {
+        Database.ExecuteCommand($"dbo.InsertBook @BookName='{name}'");
+    }
+
     public DbSet<Book> Book { get; set; }
 
     public DbSet<Recipe> Recipe { get; set; }
