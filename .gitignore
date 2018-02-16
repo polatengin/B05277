@@ -3,6 +3,8 @@
 package-lock.json
 bin
 obj
+*.sln
+.vs
 .vscode
 packages
 Properties
