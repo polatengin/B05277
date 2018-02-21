@@ -27,8 +27,9 @@ public class AzureStorageRepository
         CloudTable bookStorageTable = tableClient.GetTableReference("Book");
 
         // Create a query for all entities.
-        List<DynamicTableEntity> query = bookStorageTable.CreateQuery<DynamicTableEntity>().ToList();
+        var query = new TableQuery<DynamicTableEntity>();
+        List<DynamicTableEntity> result = bookStorageTable.ExecuteQuerySegmentedAsync(query, null).ConfigureAwait(false).GetAwaiter().GetResult().Results;
 
-        return query;
+        return result;
     }
 }
